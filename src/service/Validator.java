@@ -27,10 +27,17 @@ public class Validator {
             return true;
         }
     }
-    public static boolean isFileExists(String filePath) {
-        if(Files.exists(Path.of(filePath))) return false;
+    public static boolean isFileExists(String InputFilePath) {
+        if(Files.exists(Path.of(InputFilePath))) return false;
         else {
             System.out.println("Такого файла не существует или вы ввели неправильный путь");
+            return true;
+        }
+    }
+    public static boolean isDirectoryExists(String OutputDirectoryPath){
+        if(Files.isDirectory(Path.of(OutputDirectoryPath))) return false;
+        else {
+            System.out.println("Такой директории не существует или вы ввели неправильный путь к ней");
             return true;
         }
     }
